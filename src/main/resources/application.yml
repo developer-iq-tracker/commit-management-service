@@ -1,7 +1,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /api/v1/contributor-management-service
+    context-path: /api/v1/commit-management-service
 
 github:
   user-detail-url: https://api.github.com/repos/microsoft/azure-maven-plugins/contributors
