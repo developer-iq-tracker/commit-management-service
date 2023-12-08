@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: commit-management-service
+spec:
+  selector:
+    app: commit-management-service
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

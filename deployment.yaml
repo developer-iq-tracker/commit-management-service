@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commit-management-service
+  labels:
+    app: commit-management-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commit-management-service
+  template:
+    metadata:
+      labels:
+        app: commit-management-service
+    spec:
+      containers:
+        - name: commit-management-service
+          image: gcr.io/developer-iq-tracker/commit-management-service:prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /api/v1/commit-management-service/actuator/health
+            initialDelaySeconds: 40
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /api/v1/commit-management-service/actuator/health
+            initialDelaySeconds: 40
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "300m"
+              memory: "400Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
