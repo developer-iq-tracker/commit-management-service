@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface CommitRepository extends MongoRepository<Commit, String> {
     Optional<Commit> findByGitHubId(String gitHubId);
 
-    List<Commit> findAllByAssignee(String assignee);
+    List<Commit> findAllByAuthor(String author);
 }

@@ -44,7 +44,7 @@ public class CommitServiceImpl implements CommitService {
 
     @Override
     public CommitDetailsDto getAllCommitByUser(String userName) {
-        List<Commit> commits = this.commitRepository.findAllByAssignee(userName);
+        List<Commit> commits = this.commitRepository.findAllByAuthor(userName);
         return CommitDetailsDto.builder().commitCount(commits.size()).commits(commits).build();
     }
 

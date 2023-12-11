@@ -3,7 +3,7 @@ server:
   servlet:
     context-path: /api/v1/commit-management-service
 
-github:
+git-hub:
   commit-detail-url: https://api.github.com/repos/microsoft/azure-maven-plugins/commits
 
 spring:
