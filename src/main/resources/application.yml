@@ -4,7 +4,7 @@ server:
     context-path: /api/v1/commit-management-service
 
 github:
-  user-detail-url: https://api.github.com/repos/microsoft/azure-maven-plugins/contributors
+  commit-detail-url: https://api.github.com/repos/microsoft/azure-maven-plugins/commits
 
 spring:
   data:
