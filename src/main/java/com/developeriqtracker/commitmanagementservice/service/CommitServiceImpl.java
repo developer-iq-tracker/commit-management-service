@@ -28,7 +28,7 @@ public class CommitServiceImpl implements CommitService {
         List<CommitDto> commitDtoList = this.githubExternalClientService.getContributorDetails();
 
         commitDtoList.forEach(commitDto -> {
-            if (commitDto.getCommitDataDto() != null) {
+            if (commitDto.getAuthor() != null) {
                 Commit commit = this.generateGitHubUserObject(commitDto);
                 log.info("sync Commit Details From Github  | save new record | {}", commit);
                 this.checkAndRemoveOldRecords(commit);
