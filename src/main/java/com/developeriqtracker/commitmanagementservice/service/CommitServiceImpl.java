@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 @Slf4j
+@Service
 @AllArgsConstructor
 public class CommitServiceImpl implements CommitService {
 
